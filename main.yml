@@ -8,8 +8,12 @@
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:
+<<<<<<< HEAD
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+=======
+        - config.yml
+>>>>>>> Fixes #25: Make it easier to override configuration/vars.
 
   roles:
     - role: geerlingguy.homebrew
