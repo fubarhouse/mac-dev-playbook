@@ -20,6 +20,7 @@ homebrew_installed_packages:
   # - ansible # Installed via Pip.
   - autoconf
   - bash-completion
+  - chromedriver
   - doxygen
   - gettext
   - git
@@ -67,6 +68,7 @@ homebrew_cask_apps:
   - firefox
   - google-chrome
   - handbrake
+  - java
   - kdiff3
   - licecap
   - limechat
