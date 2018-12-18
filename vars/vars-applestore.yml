@@ -7,8 +7,4 @@
 # Array of App ID's will only validate.
 #
 
-mac_store_apps:
-  - name: BlackMagic Disk Speed test
-    id: 425264550
-  - name: Microsoft OneDrive
-    id: 823766827
+mac_store_apps: []
