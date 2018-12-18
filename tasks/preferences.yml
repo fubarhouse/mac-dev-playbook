@@ -4,7 +4,6 @@
   shell: defaults read com.apple.terminal 'Default Window Settings'
   register: terminal_theme
   changed_when: false
-  always_run: yes
 
 - name: Terminal | Ensure custom Terminal profile is added.
   shell: open files/terminal/JJG-Term.terminal
