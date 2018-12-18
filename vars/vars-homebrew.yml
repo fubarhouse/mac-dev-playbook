@@ -6,22 +6,9 @@ homebrew_installed_packages:
   - git
   - go
   - gpg
-  - python
-  - sqlite
-  - mcrypt
-  - mysql
-  - npm
-  - nvm
-  - php56
-  - php56-mcrypt
-  - php56-xdebug
   - ssh-copy-id
-  - cowsay
-  - ios-sim
   - readline
-  - subversion
   - openssl
-  - drush
   - wget
 
 homebrew_taps:
