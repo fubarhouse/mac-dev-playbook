@@ -30,33 +30,21 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  # Browsers
-  - google-chrome
-  - firefoxdeveloperedition
-  # Cloud-based storage
-  - dropbox
-  - google-drive
-  # Communication
-  - google-hangouts
-  # Creative
+  - docker
+  - firefox-developer-edition
+  - gpg-suite
   - adobe-creative-cloud
   - jetbrains-toolbox
-  # Entertainment
   - steam
+  - keybase
   - kodi
   - vlc
   - xbox360-controller-driver
-  # Information
   - geekbench
-  - mactracker
-  # Tools
-  - ccleaner
   - iterm2
-  # Tools - Development
-  - filezilla
-  - gitkraken
   - sublime-text
   - teamviewer
   - tower
-  - virtualbox
   - vagrant
+  - microsoft-office
+  - microsoft-teams
