@@ -5,16 +5,12 @@
     state: directory
 
 - name: Ensure /etc/ansible directory exists.
-  become: yes
-  become_user: root
   file:
     path: /etc/ansible
     state: directory
   become: yes
 
 - name: Symlink /usr/local/etc/ansible to /etc/ansible.
-  become: yes
-  become_user: root
   file:
     src: /etc/ansible
     path: /usr/local/etc/ansible

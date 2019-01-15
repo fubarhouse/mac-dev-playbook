@@ -1,35 +1,44 @@
 ---
-- hosts: localhost
+- hosts: all
   connection: local
+
   vars_files:
-    - vars/main.yml
-    - vars/vars-homebrew.yml
-    - vars/vars-dotfiles.yml
-    - vars/vars-dockutil.yml
-    - vars/vars-applestore.yml
-  vars_prompt:
-  - name: app_store_email
-    prompt: Mac Apple Store ID
-    private: no
-    when: app_store_email is undefined
-  - name: app_store_password
-    prompt: Mac Apple Store Password
-    private: yes
-    when: app_store_password is undefined
+    - default.config.yml
+
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
 
   roles:
-    - geerlingguy.homebrew
-    - geerlingguy.dotfiles
-    - fubarhouse.sublime-drupal
-    - fubarhouse.macstore
-    - fubarhouse.macfonts
-    - fubarhouse.macdock
+    - role: geerlingguy.homebrew
+      tags: ['homebrew']
+    - role: geerlingguy.dotfiles
+      when: configure_dotfiles
+      tags: ['dotfiles']
+    - role: geerlingguy.mas
+      when: mas_installed_apps
+      tags: ['mas']
 
   tasks:
-    - include: tasks/ansible-setup.yml
-    - include: tasks/preferences.yml
+    - include_tasks: tasks/ansible-setup.yml
 
-    - name: Run .osx dotfiles.
-      shell: ~/.osx --no-restart
-      changed_when: false
-      when: '".osx" in dotfiles_files'
+    - include_tasks: tasks/sudoers.yml
+      when: configure_sudoers
+
+    - include_tasks: tasks/terminal.yml
+      when: configure_terminal
+
+    - include_tasks: tasks/osx.yml
+      when: configure_osx
+      tags: ['osx']
+
+    - include_tasks: tasks/extra-packages.yml
+      tags: ['extra-packages']
+
+    - name: Run configured post-provision ansible task files.
+      include_tasks: "{{ outer_item }}"
+      loop_control:
+        loop_var: outer_item
+      with_fileglob: "{{ post_provision_tasks|default(omit) }}"
