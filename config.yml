@@ -60,7 +60,7 @@ osx_script: "~/.osx --no-restart"
 
 composer_packages:
   - name: hirak/prestissimo
-  - name: drush
+  - name: drush/drush
     state: present
     version: '^8.1'
 
