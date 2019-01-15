@@ -1,0 +1,75 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_dotfiles: yes
+configure_sudoers: yes
+configure_terminal: yes
+configure_osx: yes
+
+dotfiles_repo: https://github.com/fubarhouse/dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+dotfiles_repo_local_destination: ~/Documents/dotfiles
+dotfiles_files:
+  - .bash_profile
+  - .gitconfig
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .profile
+
+homebrew_installed_packages:
+  - ansible
+  - dockutil
+  - git
+  - go
+  - gpg
+  - ssh-copy-id
+  - readline
+  - openssl
+  - wget
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - devinci-code/tap
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - 1password
+  - docker
+  - firefox-developer-edition
+  - geekbench
+  - gpg-suite
+  - iterm2
+  - jetbrains-toolbox
+  - keybase
+  - microsoft-office
+  - microsoft-teams
+  - protonvpn
+  - slack
+  - steam
+  - sublime-text
+  - teamviewer
+  - tower
+  - tunnelblick
+  - vagrant
+  - vlc
+  - xbox360-controller-driver
+
+osx_script: "~/.osx --no-restart"
+
+composer_packages:
+  - name: hirak/prestissimo
+  - name: drush
+    state: present
+    version: '^8.1'
+
+gem_packages:
+  - name: pygmy
+    state: latest
+
+npm_packages: []
+
+pip_packages: []
+
+post_provision_tasks: []
