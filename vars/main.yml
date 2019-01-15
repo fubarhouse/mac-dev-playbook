@@ -1,5 +1,0 @@
----
-
-downloads: ~/.ansible-downloads/
-configure_sudoers: yes
-install_mas_products: yes
