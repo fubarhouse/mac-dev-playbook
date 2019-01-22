@@ -55,6 +55,7 @@ homebrew_cask_apps:
   - vagrant
   - vlc
   - xbox360-controller-driver
+  - zoomus
 
 osx_script: "~/.osx --no-restart"
 
