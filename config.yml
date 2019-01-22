@@ -21,6 +21,7 @@ homebrew_installed_packages:
   - ansible
   - dockutil
   - git
+  - git-lfs
   - go
   - gpg
   - ssh-copy-id
