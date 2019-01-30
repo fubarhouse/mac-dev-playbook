@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_dotfiles: yes
+configure_dotfiles: no
 configure_sudoers: yes
 configure_terminal: yes
 configure_osx: yes
@@ -40,6 +40,7 @@ homebrew_cask_apps:
   - firefox-developer-edition
   - geekbench
   - gpg-suite
+  - graphql-playground
   - iterm2
   - jetbrains-toolbox
   - keybase
@@ -64,9 +65,9 @@ composer_packages:
     state: present
     version: '^8.1'
 
-gem_packages:
-  - name: pygmy
-    state: latest
+gem_packages: []
+  # - name: pygmy
+    # state: latest
 
 npm_packages: []
 
